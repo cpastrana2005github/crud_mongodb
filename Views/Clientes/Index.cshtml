@@ -1,0 +1,39 @@
+﻿@model IEnumerable<crudmongo1.Models.ClienteModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidoCliente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidoCliente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.cedulaCliente}) |
+            @Html.ActionLink("Details", "Details", new { id = item.cedulaCliente }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.cedulaCliente })
+        </td>
+    </tr>
+}
+
+</table>
